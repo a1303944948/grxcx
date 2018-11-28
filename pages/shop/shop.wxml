@@ -1,0 +1,91 @@
+<view class="shop_home">
+  <view class="shop_head">
+    <view class="{{shop_head_hover}} shop_head_left" bindtap="tabMe">商品</view>
+    <view class="{{shop_head_hovers}} shop_head_right" bindtap="tabsMe">商家</view>
+  </view>
+  <view class="shop_heads"></view>
+  <view class="shop_bodya_right_list_right_bottom_right_add_fly" style="display: {{flyDisplay}};top: {{flyTop}};left: {{flyLeft}};"></view>
+  <view class="shop_index" style="height: {{height}};">
+    <view class="{{shop_body}} shop_bodya">
+      <view class="shop_bodya_left">
+          <view class="shop_bodya_left_list" style="background-color: {{list.color}}" bindtap="tabListMe" data-list="{{index}}" wx:for="{{mate}}" wx:for-item="list">
+            <block wx:if="{{list.image  == undefined}}">
+              <text>{{list.name}}</text>
+            </block>
+            <block wx:else>
+              <image src="{{src}}{{list.image}}"></image>
+              <text>{{list.name}}</text>
+            </block>
+          </view>
+      </view>
+      <scroll-view class="shop_bodya_right" scroll-y="true" scroll-into-view="{{toView}}" scroll-with-animation="true" bindscroll="toMe">
+        <view id="To{{idx}}" class="shop_bodya_right_list" style='height: {{lists.height}}' wx:for="{{mate}}" wx:for-index="idx" wx:for-item="lists">
+          <view class="shop_bodya_right_head">{{lists.name}}</view>
+          <view class="shop_bodya_right_list_lists" wx:for="{{lists.array}}" wx:for-item="listss">
+            <view class="shop_bodya_right_list_left">
+              <image src="{{src}}{{listss.image}}"></image>
+            </view>
+            <view class="shop_bodya_right_list_right">
+              <view class="shop_bodya_right_list_right_top">{{listss.title}}</view>
+              <view class="shop_bodya_right_list_right_center">月售{{listss.month}} 赞{{listss.praise}}</view>
+              <view class="shop_bodya_right_list_right_bottom">
+                <view class="shop_bodya_right_list_right_bottom_left">￥{{listss.money}}</view>
+                <view class="shop_bodya_right_list_right_bottom_right">
+                  <view class="shop_bodya_right_list_right_bottom_right_add" data-id="{{idx}}" data-mark="{{index}}" bindtap="addMe">+</view>
+                  <view class="shop_bodya_right_list_right_bottom_right_text" style="display: {{listss.block}}">{{listss.selected}}</view>
+                  <view class="shop_bodya_right_list_right_bottom_right_cut" data-id="{{idx}}" data-mark="{{index}}" bindtap="cutMe" style="display: {{listss.block}}"><text></text></view>
+                  <view class="clear"></view>
+                </view>
+                <view class="clear"></view>
+              </view>
+            </view>
+            <view class="clear"></view>
+          </view>
+        </view>
+      </scroll-view>
+      <view class="clear"></view>
+    </view>
+    <view class="{{shop_body}} shop_bodyb">
+      <view class="shop_bodyb_list" wx:for="{{shoppy}}" wx:for-item="bList">
+        <image src='{{src}}{{bList.image}}'></image>
+        {{bList.text}}
+      </view>
+    </view>
+    <view class="clear"></view>
+  </view>
+  <view class="shop_foot" bindtap='footMe' style="padding-bottom: {{paddingBottom}}rpx;">
+    <view class="shop_foot_left">
+      <view class="shop_foot_left_top">{{geshu}}</view>
+      <view class="shop_foot_left_body">
+        <image src="{{src}}image/yd.png"></image>
+      </view>
+    </view>
+    <view class="shop_foot_center">
+      {{jiage}}￥
+      <text>共有{{geshu}}件商品</text>
+    </view>
+    <view class="shop_foot_right">去结算</view>
+    <view class="clear"></view>
+  </view>
+  <view class="shop_foots" style="bottom: {{footsBottom}}rpx;transition: {{transition}}">
+    <view class="shop_foots_head">
+      <view class="shop_foots_head_left">已选商品</view>
+      <view class="shop_foots_head_right" bindtap='clearMe'><image src="{{src}}image/qk.png"></image>清空</view>
+      <view class="clear"></view>
+    </view>
+    <view class="shop_foots_body">
+      <view class="shop_foots_body_list" wx:for="{{mates}}" wx:for-item="footList">
+        <view class="shop_foots_body_list_left">{{footList.title}}</view> 
+        <view class="shop_foots_body_list_center"><text>￥</text>{{footList.sum}}</view>
+        <view class="shop_foots_body_list_right">
+          <view class="shop_foots_body_list_right_cut" data-id="{{footList.id}}"  data-mark="{{footList.mark}}" bindtap="gwcCutMe"><text></text></view>
+          <view class="shop_foots_body_list_right_text">{{footList.selected}}</view>
+          <view class="shop_foots_body_list_right_add" data-id="{{footList.id}}"  data-mark="{{footList.mark}}" bindtap="gwcAddMe">+</view>
+          <view class="clear"></view>
+        </view>
+        <view class="clear"></view>
+      </view>
+    </view>
+  </view>
+  <view class="shop_footsMask" style="display: {{footsMaskBlack}};" bindtap="footsMaskMe"></view>
+</view>

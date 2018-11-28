@@ -1,0 +1,27 @@
+<view class="search_home">
+  <view class="search_head">
+    <image src="{{src}}image/search.png"></image>
+    <input type='text' placeholder='搜索设备' confirm-type='search'></input>
+  </view>
+  <view class="search_body">
+    <view class="search_body_list" wx:for="{{mate}}" wx:for-item="list" bindtap='navMe'>
+      <view class="search_body_list_left">
+        <image src='{{src}}{{list.image}}'></image>
+      </view>
+      <view class="search_body_list_center">
+        <view class="search_body_list_center_top">{{list.name}}</view>
+        <view class="search_body_list_center_center">{{list.add}}</view>
+        <view class="search_body_list_center_bottom">{{list.time}}</view>
+      </view>
+      <view class="search_body_list_right" wx:if="{{list.status == 1}}">
+        <view class="search_body_list_right_top" style="color: green">营业中</view>
+        <view class="search_body_list_right_bottom">{{list.money}}元起送</view>
+      </view>
+      <view class="search_body_list_right" wx:else>
+        <view class="search_body_list_right_top" style="color: #999999">已打烊</view>
+        <view class="search_body_list_right_bottom">{{list.money}}元起送</view>
+      </view>
+      <view class="clear"></view>
+    </view>
+  </view>
+</view>
