@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/shop/shop",
     "pages/mine/mine",
@@ -7,30 +7,35 @@
     "pages/history/history",
     "pages/search/search"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#0D6FB8",
     "navigationBarTitleText": "浙江嘉丰机电",
-    "navigationBarTextStyle":"#ffffff"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "color": "#555555", 
+    "color": "#555555",
     "selectedColor": "#0D6FB8",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "首页",
-      "iconPath": "image/yd.png",
-      "selectedIconPath": "image/yds.png"
-    },{
-      "pagePath": "pages/order/order",
-      "text": "订单",
-      "iconPath": "image/dd.png",
-      "selectedIconPath": "image/dds.png"
-    },{
-      "pagePath": "pages/mine/mine",
-      "text": "我的",
-      "iconPath": "image/wd.png",
-      "selectedIconPath": "image/wds.png"
-    }]
-  }
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/yd.png",
+        "selectedIconPath": "image/yds.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "image/dd.png",
+        "selectedIconPath": "image/dds.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "image/wd.png",
+        "selectedIconPath": "image/wds.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
 }

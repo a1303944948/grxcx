@@ -9,13 +9,16 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false
+		"autoAudits": false,
+		"uglifyFileName": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.0",
 	"appid": "wx7c5ad66ee892c4a3",
 	"projectname": "grxcx",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
